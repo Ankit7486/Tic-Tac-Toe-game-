@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<time.h>
+#include<stdlib.h>
 void display(char dis[3][3])
 {
 
@@ -141,7 +142,8 @@ int main()
            if(box_check(dis))
            { 
             printf("IT`s A TIE");
-            break;
+               display(dis);
+                   break;
            }
            turn =1;       //computer turn
         }
@@ -149,11 +151,13 @@ int main()
         else   {  
                   
           comp_choice(dis);
-          if(win_cond(dis) == 0)
-                break;
+          if(win_cond(dis) == 0) {
+              display(dis);
+                break;  }
            if(box_check(dis))
            {
            printf("ITS A TIE");
+               display(dis);
            break;
           }
           turn = 0;
